@@ -25,8 +25,8 @@ public class Circle implements Constants
         int tempX, tempY;
         for(int i = 0; i <= 359; i++)
         {
-            tempX = xPos + circleW * (1 + (int)(Math.cos(i) * Math.PI / 180));
-            tempY = yPos + circleW * (1 + (int)(Math.sin(i) * Math.PI / 180));
+            tempX = xPos + radius * (1 + (int)(Math.cos(i) * Math.PI / 180));
+            tempY = yPos + radius * (1 + (int)(Math.sin(i) * Math.PI / 180));
 
             if(Math.pow((tempX - circle.getCenterX()), 2) + Math.pow((tempY - circle.getCenterY()), 2) <= Math.pow(circle.getRadius(), 2))
                 return true;

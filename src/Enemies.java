@@ -125,8 +125,8 @@ public class Enemies extends Circle implements Constants
     public void draw()
     {
         graphicsContext.setFill(Color.GRAY);
-        graphicsContext.fillOval(xPos, yPos, enemyW, enemyH);
-        graphicsContext.strokeOval(xPos, yPos, enemyW, enemyH);
+        graphicsContext.fillOval(xPos, yPos, this.getRadius(), this.getRadius());
+        graphicsContext.strokeOval(xPos, yPos, this.getRadius(), this.getRadius());
     }
 
     public void incrementX(int a)

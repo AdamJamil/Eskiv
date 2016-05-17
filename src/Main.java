@@ -94,7 +94,7 @@ public class Main extends Application implements Constants
                 ball.setYPos(insets);
 
             gc.setFill(Color.BLACK);
-            gc.fillOval(ball.getXPos(), ball.getYPos(), circleW, circleH);
+            gc.fillOval(ball.getXPos(), ball.getYPos(), ball.getRadius(), ball.getRadius());
 
                 for(int i = baddies.size() - 1; i >= 0; i--)
                 {
