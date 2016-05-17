@@ -1,3 +1,5 @@
+package Kenny;
+
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 

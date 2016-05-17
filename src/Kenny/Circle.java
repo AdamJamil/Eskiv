@@ -1,3 +1,5 @@
+package Kenny;
+
 /**
  * Created by 10009354 on 5/17/2016.
  */
@@ -11,8 +13,8 @@ public class Circle implements Constants
         int tempX, tempY;
         for(int i = 0; i <= 359; i++)
         {
-            tempX = xPos + circleW * (1 + (int)(Math.cos(i) * Math.PI / 180));
-            tempY = yPos + circleW * (1 + (int)(Math.sin(i) * Math.PI / 180));
+            tempX = xPos + Constants.circleW * (1 + (int)(Math.cos(i) * Math.PI / 180));
+            tempY = yPos + Constants.circleW * (1 + (int)(Math.sin(i) * Math.PI / 180));
 
             if(Math.pow((tempX - circle.getCenterX()), 2) + Math.pow((tempY - circle.getCenterY()), 2) <= Math.pow(circle.getRadius(), 2))
                 return true;
@@ -25,10 +27,11 @@ public class Circle implements Constants
         int tempX, tempY;
         for(int i = 0; i <= 359; i++)
         {
-            tempX = xPos + radius * (1 + (int)(Math.cos(i) * Math.PI / 180));
-            tempY = yPos + radius * (1 + (int)(Math.sin(i) * Math.PI / 180));
+            tempX = getCenterX() + getRadius() * (int)(Math.cos(i * Math.PI / 180));
+            tempY = getCenterY() + getRadius() * (int)(Math.sin(i * Math.PI / 180));
+            System.out.println(Math.pow((tempX - circle.getCenterX()), 2) + Math.pow((tempY - circle.getCenterY()), 2));
 
-            if(Math.pow((tempX - circle.getCenterX()), 2) + Math.pow((tempY - circle.getCenterY()), 2) <= Math.pow(circle.getRadius(), 2))
+            if(Math.pow((tempX - circle.getCenterX()), 2) + Math.pow((tempY - circle.getCenterY()), 2) < Math.pow(circle.getRadius() - 2, 2))
                 return true;
         }
         return false;
@@ -60,17 +63,18 @@ public class Circle implements Constants
         this.yPos = y;
     }
 
-    public void incrementPlayerX(int x)
+    public void incrementX(int x)
     {
         xPos += x;
     }
 
-    public void incrementPlayerY(int x)
+    public void incrementY(int x)
     {
         yPos += x;
     }
 
-    public int getRadius() {
+    public int getRadius()
+    {
         return radius;
     }
 
